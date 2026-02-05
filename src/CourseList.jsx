@@ -5,48 +5,30 @@ import js from "./assets/Js.jpg";
 
 function CourseList() {
   const courses = [
-    {
-      name: "HTML",
-      price: 199,
-      image: html,
-      rating: 5,
-      show: true,
-    },
-    {
-      name: "CSS",
-      price: 199,
-      image: css,
-      rating: 5,
-      show: true,
-    },
-    {
-      name: "JavaScript",
-      price: 99,
-      image: js,
-      rating: 5,
-      show: true,
-    },
-    {
-      name: "React",
-      price: 199,
-      image: js,
-      rating: 5,
-      show: true,
-    },
+    { name: "HTML", price: 199, image: html, rating: 5, show: true },
+    { name: "CSS", price: 199, image: css, rating: 5, show: true },
+    { name: "JavaScript", price: 99, image: js, rating: 5, show: true },
+    { name: "React", price: 199, image: js, rating: 5, show: true },
   ];
 
-  const coursesList = courses.map((course, index) => (
-    <Course
-      key={index}
-      name={course.name}
-      image={course.image}
-      price={course.price}
-      rating={course.rating}
-      show={course.show}
-    />
-  ));
+  const vfmCourses = courses
+    .filter(course => course.price < 200)
+    .sort((a, b) => b.price - a.price);
 
-  return <>{coursesList}</>;
+  return (
+    <>
+      {vfmCourses.map(course => (
+        <Course
+          key={course.name}
+          name={course.name}
+          image={course.image}
+          price={course.price}
+          rating={course.rating}
+          show={course.show}
+        />
+      ))}
+    </>
+  );
 }
 
 export default CourseList;
