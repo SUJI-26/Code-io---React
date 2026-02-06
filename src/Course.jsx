@@ -1,6 +1,7 @@
+
 import { useState } from "react";
 
-function Course({ name, image, price, rating, show }) {
+function Course(props) {
   if (!show) return null;
 
   let Purchased = false;
@@ -29,10 +30,26 @@ function Course({ name, image, price, rating, show }) {
       />
       <h3>{name}</h3>
       <p>₹{price}</p>
+      <p>{discount}</p>
       <button onClick={buyNow}>Buy Now</button>
+      <button onClick={props.delete}>Delete</button>
       <p>{purchased ? "Already purchased" : "Get it Now"}</p>
     </div>
   );
 }
+
+
+Course.prototype = {
+  name : propTypes.string,
+  rating : PropTypes.number,
+  show : PropTypes.bool
+}
+
+
+
+
+
+
+
 
 export default Course;
