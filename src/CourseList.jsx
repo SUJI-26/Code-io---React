@@ -25,9 +25,6 @@ function CourseList() {
 
   },[]);
 
-
-
-
   function handleDelete(id){
     const newCourses = courses.filter((course) => course.id != id)
     setCourses(newCourses);
