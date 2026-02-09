@@ -1,0 +1,29 @@
+
+{
+"courses" : [
+    {
+      "id": 1,
+      "name": "HTML",
+      "price": 199,
+      "image": "http://localhost:3000/assets/Html.jpg",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "CSS",
+      "price": 199,
+      "image": "http://localhost:3000/assets/Css.jpg",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "price": 99,
+      "image": "http://localhost:3000/assets/Js.jpg",
+      "rating": 5
+ 
+    }
+ 
+]
+
+}
