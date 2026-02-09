@@ -39,17 +39,10 @@ function Course(props) {
 }
 
 
-Course.prototype = {
+Course.propTypes = {
   name : propTypes.string,
   rating : PropTypes.number,
   show : PropTypes.bool
 }
-
-
-
-
-
-
-
 
 export default Course;

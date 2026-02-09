@@ -3,7 +3,7 @@ import html from "./assets/Html.jpg";
 import css from "./assets/Css.jpg";
 import js from "./assets/Js.jpg";
 
-function CourseList() {
+function CourseList(props) {
   const courses = [
     { name: "HTML", price: 199, image: html, rating: 5, show: true },
     { name: "CSS", price: 199, image: css, rating: 5, show: true },

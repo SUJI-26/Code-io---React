@@ -1,10 +1,10 @@
-import Course from "./Course";
+import Course  from "./Course";
 import html from "./assets/Html.jpg";
 import css from "./assets/Css.jpg";
 import js from "./assets/Js.jpg";
 import { useEffect, useState } from "react";
 
-function CourseList() {
+function CourseList(props) {
   const [courses , setCourses] = useState([
     { name: "HTML", price: 199, image: html, rating: 5, show: true },
     { name: "CSS", price: 199, image: css, rating: 5, show: true },
@@ -18,10 +18,11 @@ function CourseList() {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => {
       console.log(response);
-     return response.json()
-    
+     return response.json() 
     }).then(data => console.log(data))
-
+    .catch((error)=>{
+      console.log(error)
+    })
 
   },[]);
 
