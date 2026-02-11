@@ -3,28 +3,12 @@ import html from "./assets/Html.jpg";
 import css from "./assets/Css.jpg";
 import js from "./assets/Js.jpg";
 import { useEffect, useState } from "react";
+import useFetch from "./usefetch";
 
 function CourseList() {
-  const [courses, setCourses] = useState(null);
 
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      fetch("http://localhost:3000/courses")
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could't retrive data");
-          }
-          return response.json();
-        })
-        .then((data) => setCourses(data))
-        .catch((error) => {
-          console.log(error.message);
-          setError(error.message);
-        });
-    }), 1000;
-  }, []);
+  const [course, dummy , error] = useFetch('http://localhost:3000/courses');
+  
 
   function handleDelete(id) {
     // Fixed: Use !== instead of != for strict comparison
