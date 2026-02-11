@@ -9,7 +9,6 @@ function CourseList() {
 
   const [course, dummy , error] = useFetch('http://localhost:3000/courses');
   
-
   function handleDelete(id) {
     // Fixed: Use !== instead of != for strict comparison
     const newCourses = courses.filter((course) => course.id !== id);
