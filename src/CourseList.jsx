@@ -6,21 +6,18 @@ import { useEffect, useState } from "react";
 import useFetch from "./usefetch";
 
 function CourseList() {
+  const [course, dummy, error] = useFetch("http://localhost:3000/courses");
 
-  const [course, dummy , error] = useFetch('http://localhost:3000/courses');
-  
   function handleDelete(id) {
     // Fixed: Use !== instead of != for strict comparison
     const newCourses = courses.filter((course) => course.id !== id);
     setCourses(newCourses);
     console.log(`Deleted course with id: ${id}`);
   }
-
   // Filter courses with price less than 200 and sort by price (highest to lowest)
   const vfmCourses = courses
     .filter((course) => course.price < 200)
     .sort((a, b) => b.price - a.price);
-
 
   return (
     <div
@@ -54,5 +51,3 @@ function CourseList() {
 }
 
 export default CourseList;
-
-
